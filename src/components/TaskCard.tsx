@@ -16,13 +16,13 @@ export default function TaskCard({
   toggleDoneTaskFunc,
 }: props) {
   // callback function when delete button is clicked
-  const deleteBtnOnClick = () => {
-    deleteTaskFunc(id);
-  };
+  // const deleteBtnOnClick = () => {
+  //   deleteTaskFunc(id);
+  // };
 
-  const toggleDoneBtnOnClick = () => {
-    toggleDoneTaskFunc(id);
-  };
+  // const toggleDoneBtnOnClick = () => {
+  //   toggleDoneTaskFunc(id);
+  // };
 
   return (
     <div key={id} className="card mb-3">
@@ -44,14 +44,17 @@ export default function TaskCard({
           </div>
           <div className="col-xs-3 col-sm-3 col-md-3 col-lg-2">
             <button
-              className="btn btn-success me-2"
-              onClick={toggleDoneBtnOnClick}
+              className="btn btn-success"
+              onClick={() => toggleDoneTaskFunc(id)}
             >
               Done
             </button>
           </div>
           <div className="col-xs-3 col-sm-3 col-md-3 col-lg-2">
-            <button className="btn btn-danger" onClick={deleteBtnOnClick}>
+            <button
+              className="btn btn-danger"
+              onClick={() => deleteTaskFunc(id)}
+            >
               Delete
             </button>
           </div>
